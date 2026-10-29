@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import user_list from './user_list';
 
 function App() {
   return (
@@ -21,5 +22,11 @@ function App() {
     </div>
   );
 }
-
+user_list(); {
+  return (
+    <div>
+      <UserList />
+    </div>
+  )
+}
 export default App;
