@@ -1,32 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
-import user_list from './user_list';
+import userList from './userList';
+import React from 'react';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  render() {
+    return (
+      <div className="user-list">
+        {userList.map(user => (
+          <div key={user.id} className="user">
+            <h3>{user.name}</h3>
+            <p>{user.email}</p>
+          </div>
+        ))}
+      </div>
+    );
+  }
 }
-user_list(); {
-  return (
-    <div>
-      <UserList />
-    </div>
-  )
-}
+
 export default App;
