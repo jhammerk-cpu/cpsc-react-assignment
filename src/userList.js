@@ -1,44 +1,60 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { useEffect, useState } from 'react';
+import SearchBox from './search';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+function UserList() {
+  const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
 
-export default class UserList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      users: [],
-      loading: true,
-    };
-  }
-componentDidMount() {
-    fetch('https://jsonplaceholder.typicode.com/users/1/posts')
-      .then((response) => response.json())
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Request failed with status ${response.status}`);
+        }
+        return response.json();
+      })
       .then((data) => {
-        this.setState({ users: data, loading: false });
+        setUsers(data);
+        setLoading(false);
+      })
+      .catch(() => {
+        setError('Unable to load users. Please try again later.');
+        setLoading(false);
       });
-  }}
-redner() ;{
-    const { users, loading } = this.state;
-    if (loading) {
-      return <div>Loading...</div>;
-    }
-    return (
-      <div>
-        <h2>Users</h2>
+  }, []);
+
+  if (loading) {
+    return <p>Loading users...</p>;
+  }
+
+  if (error) {
+    return <p role="alert">{error}</p>;
+  }
+
+  const filteredUsers = users.filter((user) =>
+    user.name.toLowerCase().includes(searchTerm.trim().toLowerCase())
+  );
+
+  return (
+    <section className="user-list">
+      <h2>Users</h2>
+      <SearchBox value={searchTerm} onChange={setSearchTerm} />
+      {filteredUsers.length === 0 ? (
+        <p>No users found.</p>
+      ) : (
         <ul>
-          {users.map((user) => (
-            <li key={user.id}>{user.title}</li>
+          {filteredUsers.map((user) => (
+            <li key={user.id}>
+              <h3>{user.name}</h3>
+              <p>{user.email}</p>
+            </li>
           ))}
         </ul>
-      </div>
-    );
-  }
+      )}
+    </section>
+  );
+}
+
+export default UserList;
