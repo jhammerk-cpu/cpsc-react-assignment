@@ -8,22 +8,31 @@ function UserList() {
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/users')
-      .then((response) => {
+    async function fetchUsers() {
+      try {
+        const response = await fetch('https://jsonplaceholder.typicode.com/users');
         if (!response.ok) {
           throw new Error(`Request failed with status ${response.status}`);
         }
-        return response.json();
-      })
-      .then((data) => {
+        const data = await response.json();
         setUsers(data);
         setLoading(false);
-      })
-      .catch(() => {
+      } catch (error) {
         setError('Unable to load users. Please try again later.');
         setLoading(false);
-      });
+      }
+    }
+    fetchUsers();
   }, []);
+  const favoriteUsers = users.filter((user) => user.isFavorite);
+
+  function toggleFavorite(userId) {
+    setUsers((currentUsers) =>
+      currentUsers.map((user) =>
+        user.id === userId ? { ...user, isFavorite: !user.isFavorite } : user
+      )
+    );
+  }
 
   if (loading) {
     return <p>Loading users...</p>;
@@ -46,6 +55,26 @@ function UserList() {
       ) : (
         <ul>
           {filteredUsers.map((user) => (
+            <li key={user.id}>
+              <h3>{user.name}</h3>
+              <p>{user.email}</p>
+              <button
+                type="button"
+                aria-pressed={Boolean(user.isFavorite)}
+                onClick={() => toggleFavorite(user.id)}
+              >
+                {user.isFavorite ? 'Remove from favorites' : 'Add to favorites'}
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+      <h2>Favorite Users</h2>
+      {favoriteUsers.length === 0 ? (
+        <p>No favorite users found.</p>
+      ) : (
+        <ul>
+          {favoriteUsers.map((user) => (
             <li key={user.id}>
               <h3>{user.name}</h3>
               <p>{user.email}</p>
