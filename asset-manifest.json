@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.f855e6bc.css",
-    "main.js": "/static/js/main.ed772043.js",
-    "static/js/453.390ead03.chunk.js": "/static/js/453.390ead03.chunk.js",
-    "index.html": "/index.html",
-    "main.f855e6bc.css.map": "/static/css/main.f855e6bc.css.map",
-    "main.ed772043.js.map": "/static/js/main.ed772043.js.map",
-    "453.390ead03.chunk.js.map": "/static/js/453.390ead03.chunk.js.map"
+    "main.css": "/cpsc-react-assignment/static/css/main.f855e6bc.css",
+    "main.js": "/cpsc-react-assignment/static/js/main.b6a7fdf7.js",
+    "static/js/453.390ead03.chunk.js": "/cpsc-react-assignment/static/js/453.390ead03.chunk.js",
+    "index.html": "/cpsc-react-assignment/index.html",
+    "main.f855e6bc.css.map": "/cpsc-react-assignment/static/css/main.f855e6bc.css.map",
+    "main.b6a7fdf7.js.map": "/cpsc-react-assignment/static/js/main.b6a7fdf7.js.map",
+    "453.390ead03.chunk.js.map": "/cpsc-react-assignment/static/js/453.390ead03.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.ed772043.js"
+    "static/js/main.b6a7fdf7.js"
   ]
 }
