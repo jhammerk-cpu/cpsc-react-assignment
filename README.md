@@ -65,6 +65,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
+For this GitHub Pages project site, `homepage` in `package.json` sets the required `/cpsc-react-assignment/` asset paths. Build and publish to the `gh-pages` branch with:
+
+```sh
+npm run deploy
+```
+
+Ensure GitHub Pages is configured to serve from the `gh-pages` branch.
+
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

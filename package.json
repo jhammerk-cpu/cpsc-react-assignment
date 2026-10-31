@@ -2,6 +2,7 @@
   "name": "cpsc-react-assignment",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://jhammerk-cpu.github.io/cpsc-react-assignment",
   "dependencies": {
     "@testing-library/dom": "^10.4.2",
     "@testing-library/jest-dom": "^6.9.1",
