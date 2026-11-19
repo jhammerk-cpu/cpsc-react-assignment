@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import UserList from './userList';
+import UserList from './userList.jsx';
 
 const originalFetch = global.fetch;
 

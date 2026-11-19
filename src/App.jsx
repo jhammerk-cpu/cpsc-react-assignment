@@ -1,7 +1,8 @@
 import './App.css';
-import UserList from './userList';
-import PostList from './postList';
-import { BrowserRouter, Routes, Route, NavLink, Outlet } from "react-router";
+import UserList from './userList.jsx';
+import PostList from './postList.jsx';
+import { BrowserRouter, Routes, Route, NavLink, Outlet } from "react-router-dom";
+import NotFound from './NotFound.jsx';
 
 function Layout() {
   return (
@@ -27,12 +28,13 @@ function Layout() {
 
 function App() {
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<UserList />} />
           <Route path="posts" element={<PostList />} />
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,6 +1,7 @@
 {
   "name": "cpsc-react-assignment",
   "version": "0.1.0",
+  "type": "module",
   "private": true,
   "homepage": "https://jhammerk-cpu.github.io/cpsc-react-assignment",
   "dependencies": {
@@ -11,14 +12,12 @@
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
     "react-router-dom": "^7.18.5",
-    "react-scripts": "^0.0.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
@@ -41,6 +40,8 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^6.1.1"
+    "@vitejs/plugin-react": "^6.3.0",
+    "gh-pages": "^6.1.1",
+    "vite": "^8.3.8"
   }
 }

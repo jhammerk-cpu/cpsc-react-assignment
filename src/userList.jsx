@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import SearchBox from './search';
+import SearchBox from './search.jsx';
 
 function UserList() {
   const [users, setUsers] = useState([]);
