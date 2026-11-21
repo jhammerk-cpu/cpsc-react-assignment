@@ -39,7 +39,7 @@ function App() {
     <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<UserList />} />
+          <Route index element={<UserList className="user-list" />} />
           <Route path="posts" element={<PostList />} />
           <Route path="search" element={<UserList />} />
         </Route>

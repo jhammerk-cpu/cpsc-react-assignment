@@ -62,6 +62,7 @@ I was able to preform the main task with just the Tab, Alt, Space, and Enter key
 
 ## D. Revisions
 | Problem | Severity | What I changed | Commit |
-|Navigation bar being less clear|3|enlarged text and border|--------|
+|Navigation bar being less clear|3|enlarged text and border|21eb472a5c3e3937aecd38e662bac795dd875f83|
+|search bar too small|aligned content to center and increased its size| 
 
 Problems I chose not to fix, and why:

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import SearchBox from './search.jsx';
+import './style.css';
 
 function UserList() {
   const [users, setUsers] = useState([]);
@@ -48,7 +49,7 @@ function UserList() {
 
   return (
     <section className="user-list">
-      <h2>Users</h2>
+      <h2 className="user-list-title">Users</h2>
       <SearchBox value={searchTerm} onChange={setSearchTerm} />
       {filteredUsers.length === 0 ? (
         <p>No users found.</p>

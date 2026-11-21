@@ -36,6 +36,29 @@ nav ul {
   color: inherit;
   padding: 0.5rem 1rem;
   border: 2px solid #000000;
-  border-radius: 4px;
+  border-radius: 8px;
   
+}
+
+
+.search-box-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.search-box{
+  display: flex;
+  align-items: center;
+  width: 60%;
+  height: 2rem;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border: 2px solid #000000;
+  border-radius: 8px;
+}
+.user-list-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
