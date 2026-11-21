@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import './style.css';
 
 export default function PostList() {
     const [posts, setPosts] = useState([]);
@@ -36,7 +37,7 @@ export default function PostList() {
             {posts
                 .filter((post) => post.title.includes(searchTerm))
                 .map((post) => (
-                    <li key={post.id}>
+                    <li key={post.id} className="post-list-item">
                         <h3>{post.title}</h3>
                         <p>{post.body}</p>
                     </li>

@@ -48,7 +48,7 @@ function UserList() {
   );
 
   return (
-    <section className="user-list">
+    <section className="user-list-container">
       <h2 className="user-list-title">Users</h2>
       <SearchBox value={searchTerm} onChange={setSearchTerm} />
       {filteredUsers.length === 0 ? (
@@ -56,7 +56,7 @@ function UserList() {
       ) : (
         <ul>
           {filteredUsers.map((user) => (
-            <li key={user.id}>
+            <li className="user-list-item" key={user.id}>
               <h3>{user.name}</h3>
               <p>{user.email}</p>
               <button

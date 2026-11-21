@@ -63,6 +63,7 @@ I was able to preform the main task with just the Tab, Alt, Space, and Enter key
 ## D. Revisions
 | Problem | Severity | What I changed | Commit |
 |Navigation bar being less clear|3|enlarged text and border|21eb472a5c3e3937aecd38e662bac795dd875f83|
-|search bar too small|aligned content to center and increased its size| 
+|search bar too small|aligned content to center and increased its size| 21eb472a5c3e3937aecd38e662bac795dd875f83|
+|PostList seperation| added border box to posts|
 
-Problems I chose not to fix, and why:
+I chose to fix the problems above since they are quiz easy fixes that make vital changes to the usability and aethetic of the site. I chose not to remove the favorites button since 2/3 of my tasks include that functionality.
