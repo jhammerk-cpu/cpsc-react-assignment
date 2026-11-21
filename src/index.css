@@ -6,16 +6,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-body{
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-}
-@media (max-width: 600px) {
-  body {
-    display: flex;
-    flex-direction: column;
-  }
-}
+
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

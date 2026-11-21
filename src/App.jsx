@@ -3,6 +3,7 @@ import UserList from './userList.jsx';
 import PostList from './postList.jsx';
 import { BrowserRouter, Routes, Route, NavLink, Outlet } from "react-router-dom";
 import NotFound from './NotFound.jsx';
+import './style.css';
 
 function Layout() {
   return (
@@ -10,15 +11,22 @@ function Layout() {
       <nav>
         <ul>
           <li>
-            <NavLink to="/" end>
+            <NavLink className="nav-link" to="/" end>
               Users
             </NavLink>
           </li>
           <li>
-            <NavLink to="/posts">
+            <NavLink className="nav-link" to="/posts">
               Posts
             </NavLink>
           </li>
+          <ul>
+            <li> 
+              <NavLink className="nav-link" to="/search">
+                Search Users
+              </NavLink>
+            </li>
+          </ul>
         </ul>
       </nav>
       <Outlet />
@@ -33,6 +41,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<UserList />} />
           <Route path="posts" element={<PostList />} />
+          <Route path="search" element={<UserList />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
