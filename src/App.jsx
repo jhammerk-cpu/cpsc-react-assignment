@@ -22,13 +22,11 @@ function Layout() {
               Posts
             </NavLink>
           </li>
-          <ul>
-            <li> 
-              <NavLink className="nav-link" to="/search">
-                Search Users
-              </NavLink>
-            </li>
-          </ul>
+          <li>
+            <NavLink className="nav-link" to="/search">
+              Search Users
+            </NavLink>
+          </li>
         </ul>
       </nav>
       <Outlet />
